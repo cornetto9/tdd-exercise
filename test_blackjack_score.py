@@ -10,20 +10,35 @@ def test_score_for_pair_of_number_cards():
   score = blackjack_score(hand)
 
   # Assert <-- Write assert statement here
-  
+  assert score == 7
 
-@pytest.mark.skip(reason="no way of currently testing this")
+#@pytest.mark.skip(reason="no way of currently testing this")
 def test_facecards_have_values_calculated_correctly():
-  pass
+  hand = ["King", "Queen"]
 
-@pytest.mark.skip(reason="no way of currently testing this")
+  score = blackjack_score(hand)
+
+  assert score == 20
+  
+#@pytest.mark.skip(reason="no way of currently testing this")
 def test_calculates_aces_as_11_where_it_does_not_go_over_21():
-  pass
+  hand = ['Ace', 5]
+
+  score = blackjack_score(hand)
+
+  assert score == 16
 
 
-@pytest.mark.skip(reason="no way of currently testing this")
+
+
+#@pytest.mark.skip(reason="no way of currently testing this")
 def test_calculates_aces_as_1_where_11_would_bust():
-  pass
+  hand = [7, 8, 'Ace']
+
+  score = blackjack_score(hand)
+
+  assert score == 16
+
 
 @pytest.mark.skip(reason="no way of currently testing this")
 def test_returns_invalid_for_invalid_cards():
